@@ -1,0 +1,14 @@
+{
+  "name": "societyApp",
+  "app_id": "",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://localhost:4000/users/"
+    }
+  ],
+  "type": "ionic1",
+  "watchPatterns": [
+    "scss/**/*"
+  ]
+}

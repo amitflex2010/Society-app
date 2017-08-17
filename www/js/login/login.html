@@ -12,7 +12,7 @@
     <ion-slide-box does-continue="true" auto-play="true" show-pager="false" >
           <ion-slide ng-repeat="slide in vm.images">
                <div class="home-hello">
-               <img src="img/{{slide}}" height="{{vm.bannerHeight}}" />
+               <img src="img/{{slide}}" height="100%" />
                
                </div>
              </ion-slide>
@@ -21,6 +21,7 @@
  </div>
 <div style="bottom:0;  position: fixed; width:100%;">
     <span style="float:left; width:50%;   opacity: 0.7;" class="button button-balanced" ng-click="vm.openPopup('sign-in')">Sign IN</span><span style="float:right; width:50%;  opacity: 0.7;" class="button button-positive" ng-click="vm.openPopup('sign-up')">Sign Up</span>
+    
     </div>
     
 <!--div id="wrap">

@@ -41,7 +41,9 @@ fieldset {
 .servererror
 {
   color:#ff0000;
-  display: "none";
+  
+  text-align: center;
+  padding: 5px;
 }
 
 .form-submit-button {

@@ -15,7 +15,7 @@
         function Login(username,password, callback)
 		{
 			
-			return $http.post('http://52.38.177.138:4000/api/login', { username: username, password: password }).success(function (response, status, headers, config) 
+			return $http.post('http://localhost:4000/users/authenticate', { username: username, password: password }).success(function (response, status, headers, config) 
 			{
                     callback(response, status, headers, config);
 					

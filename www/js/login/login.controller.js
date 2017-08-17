@@ -12,7 +12,7 @@
 	function LoginController($scope,$window,$location,$state,$ionicSlideBoxDelegate,$ionicModal,$timeout,LoginDataService) 
 	{
 
-			doAutoLogin();
+		doAutoLogin();
 		var vm = this;
 		
  		vm.images = ["banner.jpg","banner1.jpg","banner2.jpg","banner3.jpg","banner4.jpg","banner5.jpg"];
@@ -78,17 +78,14 @@ vm.openPopup=  function openPopup(type)
     {
     	LoginDataService.Login($scope.loginForm.username,$scope.loginForm.password, function (response, status, headers, config) 
 		{
-
-				
-            if (response) 
+			console.log(response.role)
+			if (response) 
             {
-
-            	
 				if(status == 200)
 				{
 					var userobj = {};
-					userobj.role = response.results[0].role;
-					userobj.username = response.userName;
+					userobj.role = response.role;
+					userobj.username = response.username;
 					if($window.localStorage.accesstoken == "null")
                     {
                     	$window.localStorage.accesstoken = response.access_token;
@@ -120,19 +117,17 @@ vm.openPopup=  function openPopup(type)
 						document.getElementById("wrongcredentials").style.display = "block";
 						$timeout(function() {
        					 window.location = "/";
-    }, 3000);
-						//window.location = "/";
+    					}, 3000);
+						
 
 					}
                 } 
                 else 
                 {
-                    //FlashService.Error(response.message);
-                    //vm.dataLoading = false;
-					document.getElementById("servererror").style.display = "block";
+					document.getElementById("servererror").innerHTML = "Something wrong at server. Try again later";
 					$timeout(function() {
        					 window.location = "/";
-    }, 3000);
+   					}, 3000);
 					
                 }
 			});
@@ -143,11 +138,7 @@ vm.openPopup=  function openPopup(type)
     {
     	
     	$timeout(function() 
-    	{
-       	
-  			  $ionicSlideBoxDelegate.update();
-  			   }, 2000);
-    
+    	{ $ionicSlideBoxDelegate.update();}, 2000);
    	}
 
 
@@ -155,9 +146,7 @@ vm.openPopup=  function openPopup(type)
 
 	vm.onLoginSubmit = function onLoginSubmit()
 	{
-		 
 		login();
-		
 	}
 
 	  vm.onRegisterSubmit = function onRegisterSubmit()
@@ -168,13 +157,9 @@ vm.openPopup=  function openPopup(type)
                 if (response) 
                 {
 					if(status == 200)
-					{
-
-					}
+					{}
 					else
-					{
-
-					}
+					{}
                     
                 } 
                 else 

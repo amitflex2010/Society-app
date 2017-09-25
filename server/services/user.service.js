@@ -1,4 +1,5 @@
 ﻿var config = require('config.json');
+var fs = require('fs');
 var _ = require('lodash');
 var jwt = require('jsonwebtoken');
 var bcrypt = require('bcryptjs');
@@ -11,6 +12,7 @@ var service = {};
 
 service.authenticate = authenticate;
 service.getAll = getAll;
+service.getAllComplaints = getAllComplaints;
 service.getById = getById;
 service.create = create;
 service.update = update;
@@ -55,6 +57,16 @@ function authenticate(username, password) {
     });
 */
 
+    return deferred.promise;
+}
+
+function getAllComplaints()
+{
+    var deferred = Q.defer();
+    
+    var obj = JSON.parse(fs.readFileSync('./data/complaints.json', 'utf8'));
+   
+    deferred.resolve(obj);
     return deferred.promise;
 }
 

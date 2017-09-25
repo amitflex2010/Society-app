@@ -201,3 +201,11 @@ a:hover {
   display:flex;
   flex-direction:row;
 }
+.odd
+{
+  color: #ccc;
+}
+.even
+{
+color: #fff;
+}

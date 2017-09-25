@@ -10,12 +10,12 @@ router.get('/', getAll);
 router.get('/current', getCurrent);
 router.put('/:_id', update);
 router.delete('/:_id', _delete);
+router.get('/complaints', getComplaints);
 
 module.exports = router;
 
 function authenticate(req, res) {
 
-    console.dir(req.body.username)
     userService.authenticate(req.body.username, req.body.password)
         .then(function (user) {
             if (user) {
@@ -25,6 +25,17 @@ function authenticate(req, res) {
                 // authentication failed
                 res.status(400).send('Username or password is incorrect');
             }
+        })
+        .catch(function (err) {
+            res.status(400).send(err);
+        });
+}
+
+function getComplaints(req, res)
+{
+     userService.getAllComplaints()
+        .then(function (complaints) {
+            res.send(complaints);
         })
         .catch(function (err) {
             res.status(400).send(err);

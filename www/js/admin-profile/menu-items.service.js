@@ -11,20 +11,30 @@
 	function menuItemsAdmin() {
 		var data = [{
 			title: 'Society Complaints',
-			path: 'subadminprofile',
-			icon: 'ion-speakerphone'
+			path: 'societycomplaints',
+			icon: 'ion-person-stalker'
 		}, {
 			title: 'Approval Requests',
 			path: 'products-extended',
-			icon: 'ion-android-cart'
+			icon: 'ion-arrow-down-c'
 		}, {
 			title: 'Send Message to Members',
 			path: 'galleries',
-			icon: 'ion-images'
+			icon: 'ion-ios-chatboxes'
 		}, {
 			title: 'Message Board',
 			path: 'map',
-			icon: 'ion-map'
+			icon: 'ion-android-mail'
+		},
+		{
+			title: 'Vendor Management',
+			path: 'map',
+			icon: 'ion-settings'
+		},
+		{
+			title: 'Inventory Management',
+			path: 'map',
+			icon: 'ion-social-dropbox'
 		}];
 
 		return data;

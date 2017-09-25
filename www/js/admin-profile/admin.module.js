@@ -28,6 +28,24 @@
 							controller: 'AdminController as vm'
 						}
 					}
+				}).state('app.society-complaints', {
+					url: '/societycomplaints',
+					
+					views: {
+						'menuContent': {
+							templateUrl: 'js/admin-profile/society-complaints/society-complaints.html',
+							controller: 'ComplaintController as vm'
+						}
+					}
+				}).state('app.society-complaints-details', {
+					url: '/societycomplaints/:tenant_id',
+					
+					views: {
+						'menuContent': {
+							templateUrl: 'js/admin-profile/society-complaints/society-complaintdetails.html',
+							controller: 'ComplaintDetailController as vm'
+						}
+					}
 				})
 				
 		});

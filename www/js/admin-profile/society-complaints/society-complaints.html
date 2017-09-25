@@ -1,0 +1,23 @@
+<ion-view view-title="Complaints">
+<ion-content>
+
+ <ion-list>
+      <ion-item collection-repeat="item in vm.complaints" href="#/app/societycomplaints/{{item.tenant_id}}">
+         
+        <div>
+            <div style="float:right;margin-right:10px " >
+                 <i style = "font-size:25px; color:red;" class="icon ion-alert"></i>
+                 <i style="font-size:25px;" class="icon ion-person"></i>
+
+            </div> 
+            <div style="padding-left: 10px; ">
+                <h4>{{item.Subject}}</h4>
+                <span>{{item.tenant_name}}</span> <br> 
+                 Registered On - <span>{{item.date}}</span>
+            </div>
+        </div>
+      </ion-item>
+    </ion-list>
+
+</ion-content>
+</ion-view>
